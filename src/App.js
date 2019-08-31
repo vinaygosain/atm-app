@@ -1,26 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
+import InputForm from './components/inputForm';
+import BreakdownTable from './components/breakdownTable';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      totalAmount: 0,
+    }
+
+    this.handleChangeAmount = this.handleChangeAmount.bind(this);
+  }
+
+  handleChangeAmount(val) {
+    this.setState({
+      totalAmount: val,
+    })
+  }
+
+  render() {
+    return (
+      <>
+        <div className="title-main">ATM Money Dispenser</div>
+        <div className="app">
+          <InputForm onChangeAmount={this.handleChangeAmount} />
+          <BreakdownTable totalAmount={this.state.totalAmount} />
+        </div>
+      </>
+    );
+  }
 }
 
 export default App;
