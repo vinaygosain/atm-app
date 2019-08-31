@@ -40,6 +40,7 @@ body {
 
 .breakdown .denominator .note-type {
   flex: 1 1 50%;
+  border-bottom: 1px solid gray;
 }
 
 .title-main{

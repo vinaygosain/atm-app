@@ -68,7 +68,7 @@ class BreakDownTable extends React.PureComponent {
                             )
                         })
                     }
-                    <div>Total notes dispensed: {totalNotes}</div>
+                    <div><b>Total notes dispensed: {totalNotes}</b></div>
                 </div>
             </div>
         )
